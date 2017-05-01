@@ -6,14 +6,13 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+  AppRegistry
 } from 'react-native';
 
+import Header from './src/components/header';
+
 const App = () => (
-    <Text>Some Text!</Text>
+        <Header/>
 );
 
 
