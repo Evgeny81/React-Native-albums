@@ -3,15 +3,19 @@ import {
     Text,
     View,
     Image,
+    Linking
 
 } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
-
+// It's possible to pass value of button:
+// 1. By props
+// 2. As a child element (this example)
 
 const AlbumDetails = ({album}) => {
-    const { title, artist, thumbnail_image, image } = album;// destruction of props to get rid of "props.albums"
+    const { title, artist, thumbnail_image, image, url } = album;// destruction of props to get rid of "props.albums"
     return (
         <Card>
             <CardSection>
@@ -32,6 +36,12 @@ const AlbumDetails = ({album}) => {
                     style={styles.imageStyle}
                     source={{ uri: image }}
                 />
+            </CardSection>
+            
+            <CardSection>
+                <Button onPress={() => Linking.openURL(url)} >
+                    Buy now
+                </Button>
             </CardSection>
         </Card>
     );
